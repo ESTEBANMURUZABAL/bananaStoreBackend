@@ -70,6 +70,9 @@ if (process.env.NODE_ENV !== 'production') {
                 name: 'collections',
                 description: 'Group of products'
             }, {
+                name: 'services',
+                description: 'Group of services'
+            }, {
                 name: 'contents',
                 description: 'Generic content'
             }, {
