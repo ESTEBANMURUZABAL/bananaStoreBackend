@@ -51,7 +51,7 @@ export default [
                 }).unknown(),
                 payload: {
                     name: Joi.object().required(),
-                    tags: Joi.array().required()
+                    tags: Joi.array().optional()
                 }
             },
             response: {
@@ -139,7 +139,8 @@ export default [
                     }).required(),
                     pricing: Joi.object({
                         currency: Joi.string().required(),
-                        price: Joi.number().precision(2).required()
+                        usdprice: Joi.number().precision(2).required(),
+                        arsprice: Joi.number().precision(2).required()
                     }).required(),
                     tags: Joi.array().required(),
                     metadata: Joi.object().required()

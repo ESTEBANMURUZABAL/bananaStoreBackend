@@ -30,7 +30,8 @@ class Service {
             images: [],
             pricing: {
                 currency: config.app.defaultCurrency,
-                price: 0
+                usdprice: 0,
+                arsprice: 0
             },
             enabled: false,
             metadata: {},
@@ -106,7 +107,7 @@ class Service {
      * Update Service
      */
     @DBDecorators.table(tables.Service)
-    static async update(serviceId, {enabled, images, name, tags, metadata, parentId, description=null}) {
+    static async update(serviceId, {enabled, name, description=null, images, pricing, tags, metadata}) {
         let obj = {
             enabled,
             name,

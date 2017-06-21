@@ -29,9 +29,21 @@ class ServicesHandler {
      * Process POST request
      * Create a new Service
      */
+
+
     static async post(request, reply) {
-        let service = await Service.create(request.payload);
-        return reply(service).code(201);
+        try {
+            let service = await Service.create(request.payload);
+            return reply(service).code(201);
+        } catch (err) {
+            if (err) {
+                return reply(BadRequest.invalidParameters('payload', {[err.param]: [err.message]})).code(400);
+            } else {
+                log.error(err, 'Unable to create service');
+                return reply().code(500);
+            }
+        }
+
     }
 }
 
