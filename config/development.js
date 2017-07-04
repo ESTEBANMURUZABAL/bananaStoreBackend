@@ -38,17 +38,17 @@ export default {
     },
     storefront: {
         label: 'bananacat.co',
-        baseUrl: 'https://localhost:3000',
+        baseUrl: 'http://localhost:4000',
         defaultLocale: 'es'
     },
     switchPayments: {
-        enabled: true,
+        enabled: false,
         baseUrl: 'https://api-test.switchpayments.com/v2',
         accountId: process.env.SWITCH_ACCOUNT_ID,
         privateKey: process.env.SWITCH_PRIVATE_KEY
     },
     mailgun: {
-        domain: 'sandboxfcb78c7c3cac4157898debc6c4b5f7c5.mailgun.org',
-        apiKey: 'key-e0532bed06afd709d7894a4cdce18d50'
+        domain: 'sandboxf5ed0a6691394a34b9b0ad053fa40b9c.mailgun.org',
+        apiKey: 'key-749708a8273ff4982711cf7588a1ff37'
     }
 }
